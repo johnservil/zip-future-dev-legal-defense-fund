@@ -6,7 +6,7 @@ A draft Zcash Improvement Proposal, for review before submission to
 Its authors are Sean Bowe (Tachyon Group), Zooko Wilcox (Shielded Labs), and
 Jason McGee (Shielded Labs).
 
-It makes two changes, approved together as one proposal:
+It makes two changes:
 
 1. At its activation, Zcash Community Grants' 8% funding stream ends, and
    until the third halving the same 8% accrues to a new lockbox, the Future

@@ -32,7 +32,7 @@ subsidies.
 
 # Abstract
 
-This ZIP makes two changes, approved together as one proposal.
+This ZIP makes two changes.
 
 1. ZCG's 8% funding stream ends when this ZIP activates. For the rest of that
    stream's term, the same 8% of the block subsidy goes into a new lockbox, the
@@ -60,14 +60,13 @@ year [^fpf-q2-2026]. The 8% stream adds another 144 ZEC a day, 52,560 ZEC a
 year; at \$1,300 per ZEC, that is about \$68 million a year, more than seven
 times ZCG's spending [^stream-scenarios].
 
-After the donation, ZCG keeps about 41,450 ZEC and its dollar
-holdings [^donation-scenarios]:
+ZCG's treasury before and after the donation, valued at \$1,300 per ZEC
+[^donation-scenarios]:
 
-| ZEC price | Donation | Kept, less grant liabilities | Years of spending kept, at \$10 million a year |
-| --: | --: | --: | --: |
-| \$1,300 | \$65.0 million | \$60.3 million | 6.0 |
-| \$1,000 | \$50.0 million | \$47.8 million | 4.8 |
-| \$500 | \$25.0 million | \$27.1 million | 2.7 |
+| | ZEC | Dollars | Value, less grant liabilities | Years of spending at 2026 levels |
+| :-- | --: | --: | --: | --: |
+| Before | 91,452.98 | \$8,796,224 | \$125.3 million | 13.3 |
+| After | 41,452.98 | \$8,796,224 | \$60.3 million | 6.4 |
 
 
 # Privacy Implications
@@ -197,8 +196,8 @@ and disbursement rules, and like that lockbox it needs no custodians or keys.
 **A donation by address.** NU7 deploys ZIP 237's NSM but no way for a
 transaction to remove ZEC from circulation directly: it deploys neither ZIP 233
 nor ZIP 234 [^zip-0233] [^zip-0259]. Sending to an address that no one can spend
-from lets the donation happen now; the credit at $A$ then moves it, and every
-earlier payment to the address, into the NSM. The consensus change is small: no
+from lets the donation happen now; at $A$, it moves into the NSM, with every
+earlier payment to the address. The consensus change is small: no
 new transaction fields, address formats, or wallet changes. Payments from anyone
 count, so the address serves every donor. If ZIP 233 is deployed later, both
 mechanisms add to the same NSM Value Balance.
@@ -272,4 +271,4 @@ None yet.
 
 [^stream-scenarios]: The 8% of a 1.5625 ZEC block subsidy, at 1,152 blocks of 75 seconds a day: `0.08 * 1.5625 * 1,152 = 144` ZEC a day, `144 * 365 = 52,560` ZEC a year; at USD 1,300 per ZEC, USD 68,328,000 a year. ZIP 218's 25-second blocks, each with a third of the subsidy, leave the daily amount the same, apart from rounding. Annual spending: `(1,530,844 + 3,187,515) * 2 = 9,436,718` USD, from the Q2 2026 report.
 
-[^donation-scenarios]: From the dashboard figures above: at P USD per ZEC, the donation is worth `50,000 * P` USD, and what ZCG keeps, less grant liabilities, `41,452.98 * P + 8,796,224 - 2,417,165` USD: at P = 1,300, 1,000, and 500, USD 60,267,933, 47,832,039, and 27,105,549. Years of spending divide these by an illustrative USD 10,000,000 a year. The figures assume no conversion costs, constant spending, and no further receipts, returns, or obligations beyond the dashboard's grant liabilities.
+[^donation-scenarios]: From the dashboard figures above, at USD 1,300 per ZEC: before the donation, `91,452.98 * 1,300 + 8,796,224 - 2,417,165 = 125,267,933` USD; after it, `41,452.98 * 1,300 + 8,796,224 - 2,417,165 = 60,267,933` USD. Years of spending divide these by the 2026 rate of USD 9,436,718 a year. The figures assume no conversion costs and no further receipts, returns, or obligations beyond the dashboard's grant liabilities.
