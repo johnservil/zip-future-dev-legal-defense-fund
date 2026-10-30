@@ -239,9 +239,15 @@ through future block subsidies. That upgrade's ZIP will specify the
 consensus rules, including the height at which the value at the address is
 counted.
 
-[TODO: Zooko. Whether that recycling covers every output sent to the NSM
-donation address, by anyone and at any height, as written above, or only
-the ZCG Committee's donation.]
+This covers every output sent to the NSM donation address, by anyone and at
+any height, the ZCG Committee's donation among them.
+
+### Circulating supply
+
+ZEC sent to the NSM donation address SHOULD be excluded from counts of
+circulating supply, such as those that block explorers, wallets, and data
+providers publish. It can never circulate again: no one can spend it, and
+it is set aside for the Network Sustainability Mechanism.
 
 
 # Rationale
