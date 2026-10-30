@@ -211,10 +211,6 @@ activation of ZIP 233 [^zip-0233].
 The ZCG Committee SHALL publish the transaction identifier of each such
 transaction to the Zcash community promptly after it is mined.
 
-[TODO: Zooko. What happens if the ZEC the ZCG Committee administers is less
-than 50,000 ZEC at the time of the donation, for example because funds are
-committed to grants or held in another form.]
-
 Since the funds ZCG administers are held by FPF, the ZCG Committee
 fulfills this provision by directing FPF to create the transactions, as it
 directs FPF to make grant payments under ZIP 1015.
@@ -272,9 +268,8 @@ needs to recycle it into the Network Sustainability Mechanism.
 # Deployment
 
 Provision 1 is a consensus change. It is proposed for activation in the
-first network upgrade after its acceptance [TODO: Zooko, for example NU7
-or a later network upgrade]. On Testnet, it activates at that network
-upgrade's Testnet activation height.
+next network upgrade. On Testnet, it activates at that network upgrade's
+Testnet activation height.
 
 Provision 2 is a process change. It takes effect on acceptance, with its
 deadline as specified above; it needs no network upgrade. The recycling of
