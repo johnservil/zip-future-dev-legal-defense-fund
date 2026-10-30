@@ -203,9 +203,8 @@ script hash with HASH160 of the byte `0x6a`.
 
 The ZCG Committee SHALL cause 50,000 ZEC, from the funds it administers,
 to be sent to the NSM donation address, in one or more Mainnet
-transactions. It SHALL do so as soon as possible, and no later than [TODO:
-Zooko, for example 30] days after the date on which this provision is
-accepted by the Zcash community. The donation does not wait for the
+transactions. It SHALL do so as soon as possible, and no later than 30 days
+after the date on which this ZIP is accepted by the Zcash community. The donation does not wait for the
 activation of ZIP 233 [^zip-0233].
 
 The ZCG Committee SHALL publish the transaction identifier of each such
