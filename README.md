@@ -18,5 +18,3 @@ It makes two changes, approved together as one proposal:
    to recycle it into the mechanism (ZIP 233).
    [`verify_nsm_donation_address.py`](verify_nsm_donation_address.py)
    checks the address.
-
-Places marked `[TODO: Zooko]` await the owner's decision.
