@@ -60,8 +60,8 @@ year [^fpf-q2-2026]. The 8% stream adds another 144 ZEC a day, 52,560 ZEC a
 year; at \$1,300 per ZEC, that is about \$68 million a year, more than seven
 times ZCG's spending [^stream-scenarios].
 
-ZCG's treasury before and after the donation, valued at \$1,300 per ZEC
-[^donation-scenarios]:
+ZCG's treasury before and after the donation, at \$1,300 per ZEC
+(details [^donation-scenarios]):
 
 | | ZEC | Dollars | Value, less grant liabilities | Years of spending at 2026 levels |
 | :-- | --: | --: | --: | --: |
