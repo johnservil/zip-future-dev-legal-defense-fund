@@ -4,7 +4,7 @@ A draft Zcash Improvement Proposal, for review before submission to
 [zcash/zips](https://github.com/zcash/zips):
 [`zip-draft-future-dev-legal-defense-fund.md`](zip-draft-future-dev-legal-defense-fund.md).
 
-It makes two independent changes:
+It makes two changes, approved together as one proposal:
 
 1. From its activation until Zcash's third halving, the 8% of the block
    subsidy that now goes to Zcash Community Grants (`FS_FPF_ZCG_H3`) goes

@@ -49,8 +49,8 @@ Network Sustainability Mechanism (or "NSM")
 
 # Abstract
 
-This ZIP makes two independent changes to Zcash's protocol-defined
-ecosystem funding.
+This ZIP makes two changes to Zcash's protocol-defined ecosystem
+funding, approved together as one proposal.
 
 1. From its activation height until Zcash's third halving, the 8% of the
    block subsidy that currently goes to Zcash Community Grants
@@ -96,7 +96,6 @@ Lockbox's, a consensus-level quantity visible to every full validator.
   Mechanism as soon as possible, without waiting for ZIP 233's activation.
 * The donated ZEC is verifiably unspendable by anyone from the moment it
   is sent.
-* Each of the two provisions can be adopted without the other.
 
 
 # Non-requirements
@@ -115,9 +114,6 @@ Lockbox's, a consensus-level quantity visible to every full validator.
 
 
 # Specification
-
-The two provisions below are independent. If the community adopts only
-one of them, the other SHALL be read as removed from this ZIP.
 
 ## Provision 1: The Future Dev and Legal Defense Fund Lockbox
 
