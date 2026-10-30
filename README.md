@@ -12,6 +12,11 @@ It makes two independent changes:
    works like the existing Deferred Dev Fund Lockbox (ZIP 2001), but it is
    a separate reserve.
 2. The ZCG Committee donates 50,000 ZEC to the Network Sustainability
-   Mechanism (ZIP 233) as soon as possible.
+   Mechanism as soon as possible, by sending it to
+   `t3QZUHYkaEQEuWosAc9HgMPKiQRdvuBPCQZ`, a P2SH address whose script is
+   `OP_RETURN`, so no one can spend from it. A future network upgrade is
+   to recycle it into the mechanism (ZIP 233).
+   [`verify_nsm_donation_address.py`](verify_nsm_donation_address.py)
+   checks the address.
 
 Places marked `[TODO: Zooko]` await the owner's decision.

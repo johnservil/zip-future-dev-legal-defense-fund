@@ -61,7 +61,9 @@ ecosystem funding.
    defines how they are disbursed.
 
 2. The ZCG Committee donates 50,000 ZEC to the Network Sustainability
-   Mechanism as soon as possible.
+   Mechanism as soon as possible, by sending it to a verifiably
+   unspendable address, for a future network upgrade to recycle into the
+   mechanism.
 
 
 # Motivation
@@ -75,8 +77,8 @@ why the 8% should accrue to a reserve rather than to ongoing grants, what
 # Privacy Implications
 
 This ZIP changes where a part of the block subsidy goes, and asks for one
-removal of funds from circulation. It changes no transaction format, and
-no wallet behavior. Lockbox balances are, like the Deferred Dev Fund
+donation, sent in the clear to a published address. It changes no
+transaction format, and no wallet behavior. Lockbox balances are, like the Deferred Dev Fund
 Lockbox's, a consensus-level quantity visible to every full validator.
 
 
@@ -91,7 +93,9 @@ Lockbox's, a consensus-level quantity visible to every full validator.
 * No funds can be disbursed from the Future Dev and Legal Defense Fund
   Lockbox until a future ZIP specifies how.
 * The ZCG Committee donates 50,000 ZEC to the Network Sustainability
-  Mechanism as soon as the mechanism allows.
+  Mechanism as soon as possible, without waiting for ZIP 233's activation.
+* The donated ZEC is verifiably unspendable by anyone from the moment it
+  is sent.
 * Each of the two provisions can be adopted without the other.
 
 
@@ -105,7 +109,9 @@ Lockbox's, a consensus-level quantity visible to every full validator.
 * This ZIP does not change the composition or governance of the ZCG
   Committee, nor its obligations regarding funds it received before the
   activation height.
-* This ZIP does not change the Network Sustainability Mechanism.
+* This ZIP does not change the Network Sustainability Mechanism, nor
+  specify the consensus rules by which a future upgrade recycles the
+  donation into it.
 
 
 # Specification
@@ -180,20 +186,31 @@ activation height, under the obligations and constraints that ZIPs 1015
 
 ## Provision 2: ZCG's donation to the Network Sustainability Mechanism
 
+### The NSM donation address
+
+The NSM donation address is the Mainnet P2SH address
+
+    t3QZUHYkaEQEuWosAc9HgMPKiQRdvuBPCQZ
+
+Its script hash is `41c98a140039816273e50db317422c11c2bfcc88`, which is
+HASH160 of the one-byte script `6a`, `OP_RETURN`. Spending a P2SH output
+requires the redeem script whose HASH160 is the address's script hash, and
+evaluating that script; `OP_RETURN` fails evaluation at once. So no one can
+spend from the NSM donation address, unless they find a second script with
+the same HASH160, which would break HASH160's second-preimage resistance.
+
+Anyone can check this: decode the address with Base58Check, confirm its
+version prefix (`1cbd`, Mainnet P2SH) and checksum, and compare its 20-byte
+script hash with HASH160 of the byte `0x6a`.
+
+### The donation
+
 The ZCG Committee SHALL cause 50,000 ZEC, from the funds it administers,
-to be removed from circulation through the Network Sustainability
-Mechanism: one or more Mainnet transactions whose $\mathsf{zip233\_amount}$
-values, as defined in ZIP 233 [^zip-0233], total 50,000 ZEC.
-
-It SHALL do so as soon as possible, and no later than [TODO: Zooko, for
-example 30] days after the later of:
-
-* the date on which this provision is accepted by the Zcash community, and
-* the activation of ZIP 233 on Mainnet.
-
-Until those transactions are mined, the ZCG Committee SHOULD hold 50,000
-ZEC of the funds it administers in reserve for this donation, and SHOULD
-NOT commit those funds to grants.
+to be sent to the NSM donation address, in one or more Mainnet
+transactions. It SHALL do so as soon as possible, and no later than [TODO:
+Zooko, for example 30] days after the date on which this provision is
+accepted by the Zcash community. The donation does not wait for the
+activation of ZIP 233 [^zip-0233].
 
 The ZCG Committee SHALL publish the transaction identifier of each such
 transaction to the Zcash community promptly after it is mined.
@@ -205,6 +222,26 @@ committed to grants or held in another form.]
 Since the funds ZCG administers are held by FPF, the ZCG Committee
 fulfills this provision by directing FPF to create the transactions, as it
 directs FPF to make grant payments under ZIP 1015.
+
+### Recycling into the Network Sustainability Mechanism
+
+ZEC sent to the NSM donation address is unspendable, but it is not removed
+from circulation by any consensus rule: until a network upgrade acts on it,
+it remains part of the transparent chain value pool and of the issued
+supply. This ZIP declares all value sent to the NSM donation address a
+donation to the Network Sustainability Mechanism.
+
+A future network upgrade SHOULD treat that value as removed from
+circulation through the Network Sustainability Mechanism, as ZIP 233
+specifies for $\mathsf{zip233\_amount}$: subtracted from the issued supply
+and from the transparent chain value pool, to be returned to circulation
+through future block subsidies. That upgrade's ZIP will specify the
+consensus rules, including the height at which the value at the address is
+counted.
+
+[TODO: Zooko. Whether that recycling covers every output sent to the NSM
+donation address, by anyone and at any height, as written above, or only
+the ZCG Committee's donation.]
 
 
 # Rationale
@@ -222,9 +259,12 @@ $\mathsf{FS\_FDLDF\_H3}$ at the same height, with the same share and the
 same end height, keeps the total block subsidy allocated to funding
 streams unchanged at every height.
 
-The donation provision is tied to the activation of ZIP 233, because before
-then no transaction can remove funds from circulation through the Network
-Sustainability Mechanism.
+The donation is made by sending ZEC to an address that no one can spend
+from, so that it can happen now, before ZIP 233 [^zip-0233] lets a
+transaction remove funds from circulation directly. Once sent, the ZEC is
+out of everyone's reach, which anyone can verify from the address alone,
+and this ZIP records its purpose. A later network upgrade then has what it
+needs to recycle it into the Network Sustainability Mechanism.
 
 
 # Deployment
@@ -235,7 +275,9 @@ or a later network upgrade]. On Testnet, it activates at that network
 upgrade's Testnet activation height.
 
 Provision 2 is a process change. It takes effect on acceptance, with its
-deadline as specified above.
+deadline as specified above; it needs no network upgrade. The recycling of
+the donated value into the Network Sustainability Mechanism is left to a
+future network upgrade and its ZIP.
 
 
 # Reference implementation
