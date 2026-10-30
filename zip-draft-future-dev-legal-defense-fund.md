@@ -163,8 +163,7 @@ as well as after.
 The ZCG Committee SHALL cause 50,000 ZEC of the funds it administers to be sent
 to the NSM donation address, in one or more Mainnet transactions. It SHALL do so
 as soon as possible, and no later than 30 days after the date on which this ZIP
-is accepted by the Zcash community. The donation does not wait for this ZIP's
-activation.
+is accepted by the Zcash community.
 
 Since the funds ZCG administers are held by FPF, the ZCG Committee fulfills this
 obligation by directing FPF to create the transactions, as it directs FPF to
@@ -204,8 +203,9 @@ new transaction fields, address formats, or wallet changes. Payments from anyone
 count, so the address serves every donor. If ZIP 233 is deployed later, both
 mechanisms add to the same NSM Value Balance.
 
-**A fixed amount.** 50,000 ZEC can be paid at once and checked by anyone on the
-chain, and ZCG keeps the rest of its treasury and its grants program.
+**The donation's size.** 50,000 ZEC is about 55% of ZCG's ZEC. Anyone can check
+its payment on the chain, and ZCG keeps the rest of its treasury and its grants
+program.
 
 **Accounting.** The lockbox's balance stays in the Issued Supply. A donation
 moves value from the transparent pool to the NSM Value Balance in the same
