@@ -68,10 +68,10 @@ ecosystem funding.
 
 # Motivation
 
-[TODO: Zooko. The reasons for this proposal, in your words. For example:
-why the 8% should accrue to a reserve rather than to ongoing grants, what
-"future development" and "legal defense" are meant to cover, and why the
-50,000 ZEC donation to the Network Sustainability Mechanism serves Zcash.]
+The rapid rise in the price of ZEC has enlarged ZCG's treasury rapidly and to much greater amounts
+than ever before. This ZIP reduces the risks and pressure that come with large amounts of money,
+donates to the Network Sustainability Mechanism (providing increased long-term issuance), and
+accrues funds in a lockbox for future use by the Zcash community.
 
 
 # Privacy Implications
