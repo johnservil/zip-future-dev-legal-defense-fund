@@ -68,10 +68,10 @@ funding, approved together as one proposal.
 
 # Motivation
 
-The rapid rise in the price of ZEC has enlarged ZCG's treasury rapidly and to much greater amounts
-than ever before. This ZIP reduces the risks and pressure that come with large amounts of money,
-donates to the Network Sustainability Mechanism (providing increased long-term issuance), and
-accrues funds in a lockbox for future use by the Zcash community.
+The rapid rise in the price of ZEC has enlarged the monetary value of ZCG's treasury to a much
+greater amount than ever before. This ZIP reduces the risks and pressure that come with large
+amounts of money, donates to the Network Sustainability Mechanism (providing increased long-term
+issuance), and accrues funds in a lockbox for future use by the Zcash community.
 
 
 # Privacy Implications
